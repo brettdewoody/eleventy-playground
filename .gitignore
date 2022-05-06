@@ -1,9 +1,8 @@
 # dependencies installed by npm
 node_modules
 
-# build artefacts
-public
-src/_11ty/_social
+# build artifacts
+_public
 
 # secrets and errors
 .env
