@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{{ title }}</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .calendar {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      list-style-type: none;
+      gap: 1rem;
+      padding: 0;
+      margin: 0;
+    }
+    .day {
+      border: 1px solid gray;
+      text-align: center;
+      padding: 1rem 0;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <ul class="calendar">
+  {% for dateItem in dates.slice(0, 31) %}
+    <li class="day" {% if loop.index == 1%}style="grid-column-start: {{ dateItem | formatDate('c') }};"{% endif %}>
+      {{ dateItem | formatDate('EEEE') }}<br>
+      {{ dateItem | formatDate('MM/dd/yyyy') }}
+    </li>
+  {% endfor %}
+  </ul>
+</body>
+</html>

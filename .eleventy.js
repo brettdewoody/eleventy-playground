@@ -1,4 +1,8 @@
+const formatDate = require('./_filters/formatDate')
+
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addFilter('formatDate', formatDate);
+
   return {
     passthroughFileCopy: true,
     dir: {
